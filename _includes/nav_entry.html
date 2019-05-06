@@ -2,7 +2,7 @@
 {% if include.entry.page %}
 
     {% for page_iter in site.pages %}
-        {% if page_iter.permalink == include.entry.page %}
+        {% if page_iter.pagename == include.entry.page %}
 
             <div>
 
