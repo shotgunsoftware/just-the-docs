@@ -12,10 +12,6 @@ layout: default
     {{ site.data.landing_page_text.title }}
     </div>
 
-    {% if site.google_custom_search_id != nil %}
-        <div class="gcse-search"></div>
-    {% endif %}
-
     <div style="display: flex; flex-wrap: wrap; margin-top: 10px; justify-content: center;" >
     {% for tile in site.data.landing_page.tiles%}
 
