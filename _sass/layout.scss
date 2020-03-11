@@ -26,18 +26,13 @@
   @include mq(md) {
     flex-wrap: nowrap;
     position: absolute;
-    width: $nav-width + 16px;
+    width: $nav-width;
     height: 100%;
     padding-top: $gutter-spacing * 2;
     padding-bottom: 0;
     flex-direction: column;
     border-right: $border $border-color;
     align-items: flex-end;
-  }
-
-  @include mq(lg) {
-    width: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
-    min-width: $nav-width - 50;
   }
 }
 
@@ -65,12 +60,7 @@
     padding-top: 0;
     padding-bottom: $gutter-spacing;
     padding-left: $gutter-spacing;
-    margin-left: $nav-width;
-  }
-
-  @include mq(lg) {
-    padding-left: $gutter-spacing;
-    margin-left: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
+    margin-left: $nav-width + 1px;
   }
 }
 
@@ -100,12 +90,13 @@
 .site-footer {
 
   @include container;
-
-  width: 100%;
-
-  @include mq(lg) {
-    width: $nav-width + 32px;
+  // Override the container padding to keep it constant
+  @include mq(sm) {
+    padding-left: $sp-5;
+    padding-right: $sp-5;
   }
+
+  width: $nav-width;
 }
 
 .navigation {
