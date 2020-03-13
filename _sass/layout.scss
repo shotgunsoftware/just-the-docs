@@ -34,6 +34,11 @@
     border-right: $border $border-color;
     align-items: flex-end;
   }
+
+  @include mq(lg) {
+    width: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
+    min-width: $nav-width;
+  }
 }
 
 .main-content-wrap {
@@ -60,7 +65,13 @@
     padding-top: 0;
     padding-bottom: $gutter-spacing;
     padding-left: $gutter-spacing;
-    margin-left: $nav-width + 1px;
+    margin-left: $nav-width;
+    margin-left: $nav-width;
+  }
+
+  @include mq(lg) {
+    padding-left: $gutter-spacing;
+    margin-left: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
   }
 }
 
@@ -90,6 +101,7 @@
 .site-footer {
 
   @include container;
+
   // Override the container padding to keep it constant
   @include mq(sm) {
     padding-left: $sp-5;
