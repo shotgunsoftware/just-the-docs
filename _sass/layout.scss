@@ -107,7 +107,10 @@
     padding-right: $sp-5;
   }
 
-  width: $nav-width;
+  width: 100%;
+  @include mq(md){
+    width: $nav-width;
+  }
 }
 
 .navigation {
